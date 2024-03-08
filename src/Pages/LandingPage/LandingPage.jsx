@@ -1,9 +1,9 @@
-import {Button, Card, Form, Input, TextArea} from 'antd'
+import {Button, Card, Form, Input} from 'antd'
 import { Link } from 'react-router-dom'
-import hero from "../../images/HeroImage.png"
-import address from '../../images/address.png'
-import phone from '../../images/phone.png'
-import mail from '../../images/mail.png'
+import hero from "../../images/HeroImage.webp"
+import address from '../../images/address.webp'
+import phone from '../../images/phone.webp'
+import mail from '../../images/mail.webp'
 const LandingPage = () => {
     const service =[
         {id:1, text:"Create Projects and Tasks Easily"},
