@@ -11,8 +11,13 @@ body{
 }
 .hero{
   width: 100vw;
-  padding: 20px 0 0 20px;
-  min-height: 100vh;
+  padding: 20px 0 30px 20px;
+  height: fit-content;
  background-image: url("./images/HeroDesign.webp");
  background-repeat: no-repeat;
+ 
+
+}
+:where(.css-dev-only-do-not-override-1uweeqc).ant-form-item .ant-form-item-label >label{
+  color: #333;
 }

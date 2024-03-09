@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+     
+        screens: {
+          'tablet': {'min': '768px', 'max': '1024px'}, // Custom tablet breakpoint
+          'phone': {'max': '767px'}, // Custom phone breakpoint
+        
+      }
+    },
   },
   plugins: [],
 }
