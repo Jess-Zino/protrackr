@@ -17,14 +17,14 @@ const Navbar = () => {
       
       <nav className={`navbar body-font ${isOpen ? 'active' : ''}`}>
         <ul>
-          <li><Link>Services</Link>
+          <li><a href="#services">Services</a>
            
             </li>
-          <li> <Link>Pricing</Link></li>
-          <li><Link>Contact Us</Link></li>
+          <li> <a href='#pricing'>Pricing</a></li>
+          <li><a href='#contact'>Contact Us</a></li>
 
         </ul>
-        <Button className="bg-[#7A5DC7] text-[#fff] body-font border-none" >Login</Button>
+        <Link to="/login"><Button className="bg-[#7A5DC7] text-[#fff] body-font border-none" >Login</Button></Link>
       </nav>
       <div className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className="bar"></div>

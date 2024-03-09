@@ -4,6 +4,7 @@ import address from '../../images/address.webp'
 import phone from '../../images/phone.webp'
 import mail from '../../images/mail.webp'
 import Navbar from '../../Components/Navbar'
+import { Link } from 'react-router-dom'
 const LandingPage = () => {
     const service =[
         {id:1, text:"Create Projects and Tasks Easily"},
@@ -30,7 +31,7 @@ const LandingPage = () => {
             <p className='body-font text-white '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam illum, repellendus aperiam suscipit aliquid.</p>
             <div className='flex gap-3 body-font tablet:justify-center phone:justify-center'>
             <Button className='body-font bg-[#A982E7] text-white border-none'>Learn More</Button>
-            <Button className='body-font text-[#7A5DC7] bg-white border-none'>Sign Up Now</Button>
+            <Button className='body-font text-[#7A5DC7] bg-white border-none'><Link to="/signup">Sign Up Now</Link></Button>
             </div>
         </div>
         <div className='right flex-[1.8]'>
@@ -38,7 +39,7 @@ const LandingPage = () => {
         </div>
     </div>
     </header>
-    <div className='service w-[100vw]  flex flex-col items-center gap-9'>
+    <div id="services" className='service w-[100vw]  flex flex-col items-center gap-9'>
         <div className='flex flex-col items-center gap-2'>
         <h1 className='main-font text-4xl text-[#7A5DC7] tablet:text-[40px] phone:text-[30px] tablet:text-center phone:text-center'>Streamline Your Project Management Process with ProTrackr</h1>
         <p className='body-font text-[#333] tablet:text-center phone:text-center'>Effortlessly Manage Projects, Collaborate with Your Team, and Stay Organized with Our Feature-Rich Project Management Platform.</p>
@@ -50,7 +51,7 @@ const LandingPage = () => {
             ))}
         </div>
     </div>
-    <div className='pricing w-[100vw]  flex flex-col items-center gap-9'>
+    <div id="pricing" className='pricing w-[100vw]  flex flex-col items-center gap-9'>
         <div className='flex flex-col items-center gap-2'>
         <h1 className='main-font text-4xl text-[#7A5DC7] tablet:text-[40px] phone:text-[30px] tablet:text-center phone:text-center'>Choose the Plan That Fits Your Needs</h1>
         <p className='body-font text-[#333] tablet:text-center phone:text-center'>We Offer Flexible Pricing Plans to Accommodate Teams of All Sizes and Budgets. Get Started Today!</p>
@@ -70,7 +71,7 @@ const LandingPage = () => {
             
         </div>
     </div>
-    <div className='contact flex flex-col gap-6'>
+    <div id="contact" className='contact flex flex-col gap-6'>
     <div className='flex flex-col items-center gap-2'>
 
         <h1 className='main-font text-4xl text-[#7A5DC7] tablet:text-[40px] phone:text-[30px] tablet:text-center phone:text-center'>Have Questions or Need More Information?</h1>
@@ -108,7 +109,7 @@ const LandingPage = () => {
       <Input className=' body-font w-[30vw] border-[#7A5DC7] border-2 tablet:w-[40vw] phone:w-[60vw] ' />
     </Form.Item>
     <Form.Item name='email' label="Email" rules={[{ type: 'email', required: true, message: 'Please input a valid email!'}]} >
-      <Input className=' body-font border-[#7A5DC7 ] border-2 tablet:w-[40vw] phone:w-[60vw]'/>
+      <Input className=' body-font border-[#7A5DC7] border-2 tablet:w-[40vw] phone:w-[60vw]'/>
     </Form.Item>
     <Form.Item
         name="phone"
@@ -116,7 +117,7 @@ const LandingPage = () => {
         rules={[{ required: true, message: 'Please input your phone number!' }]}
       
       >
-        <Input className=' body-font border-[#7A5DC7 ] border-2 tablet:w-[40vw] phone:w-[60vw]' />
+        <Input className=' body-font border-[#7A5DC7] border-2 tablet:w-[40vw] phone:w-[60vw]' />
       </Form.Item>
     <Form.Item
       label="Message"
@@ -128,7 +129,7 @@ const LandingPage = () => {
         },
       ]}
     >
-      <TextArea className=' body-font border-[#7A5DC7 ] border-2 text-[#333] tablet:w-[40vw] phone:w-[60vw]'/>
+      <TextArea className=' body-font border-[#7A5DC7] border-2 text-[#333] tablet:w-[40vw] phone:w-[60vw]'/>
     </Form.Item>
             </Form>
         </div>

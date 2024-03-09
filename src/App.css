@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 
@@ -20,4 +21,5 @@ body{
 }
 :where(.css-dev-only-do-not-override-1uweeqc).ant-form-item .ant-form-item-label >label{
   color: #333;
+  font-family: "work sans";
 }
