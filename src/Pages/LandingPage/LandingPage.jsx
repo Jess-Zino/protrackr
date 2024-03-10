@@ -131,6 +131,11 @@ const LandingPage = () => {
     >
       <TextArea className=' body-font border-[#7A5DC7] border-2 text-[#333] tablet:w-[40vw] phone:w-[60vw]'/>
     </Form.Item>
+    <Button className=' custom-button-hover hover:bg-[#A982E7] w-[30vw] body-font bg-[#7A5DC7] text-white border-none tablet:w-[40vw] phone:w-[60vw]'
+            htmlType="submit"
+          >
+            Submit
+          </Button>
             </Form>
         </div>
         </div>

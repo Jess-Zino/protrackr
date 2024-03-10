@@ -74,7 +74,7 @@ const SignUp = () => {
            
             <Form.Item>
                 <div className='flex flex-col gap-1 items-center'>
-          <Button className='  hover:bg-[#A982E7] w-[25vw] body-font bg-[#7A5DC7] text-white border-none'
+                <Button className=' custom-button-hover hover:bg-[#A982E7] w-[25vw] body-font bg-[#7A5DC7] text-white border-none tablet:w-[40vw] phone:w-[60vw]'
             htmlType="submit"
           >
             Sign Up
