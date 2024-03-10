@@ -23,3 +23,14 @@ body{
   color: #333;
   font-family: "work sans";
 }
+
+
+.custom-button-hover:hover {
+  background-color: #A982E7 !important;
+color:white !important
+}
+
+.custom-button:hover {
+  background-color: white!important;
+color:#A982E7 !important
+}

@@ -24,7 +24,7 @@ const Navbar = () => {
           <li><a href='#contact'>Contact Us</a></li>
 
         </ul>
-        <Link to="/login"><Button className="bg-[#7A5DC7] text-[#fff] body-font border-none" >Login</Button></Link>
+        <Link to="/login"><Button className="bg-[#7A5DC7] text-[#fff] body-font border-none custom-button-hover" >Login</Button></Link>
       </nav>
       <div className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className="bar"></div>

@@ -30,8 +30,8 @@ const LandingPage = () => {
             <h1 className='main-font text-[56px] text-white tablet:text-[40px] phone:text-[25px] ' >Unleash Productivity:<br/> Our Ultimate Project Partner</h1>
             <p className='body-font text-white '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam illum, repellendus aperiam suscipit aliquid.</p>
             <div className='flex gap-3 body-font tablet:justify-center phone:justify-center'>
-            <Button className='body-font bg-[#A982E7] text-white border-none'>Learn More</Button>
-            <Button className='body-font text-[#7A5DC7] bg-white border-none'><Link to="/signup">Sign Up Now</Link></Button>
+            <Button className='body-font bg-[#A982E7] text-white border-none custom-button'>Learn More</Button>
+            <Button className='body-font text-[#7A5DC7] bg-white border-none custom-button-hover'><Link to="/signup">Sign Up Now</Link></Button>
             </div>
         </div>
         <div className='right flex-[1.8]'>
