@@ -20,6 +20,7 @@ const Navbar = () => {
       
       <nav className={`navbar body-font ${isOpen ? 'active' : ''}`}>
         <ul>
+          <li><Link to="/dashboard">Dashboard</Link></li>
           <li><a href="#services">Services</a>
            
             </li>

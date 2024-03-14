@@ -61,11 +61,11 @@ const DashBoard = () => {
       <Layout
         style={{
             paddingLeft:"10px",
-          marginLeft: '80px', // No need for margin on mobile
+          marginLeft: '75px', // No need for margin on mobile
           minHeight: '100vh',
         }}
       >
-        <Header className='bg-[#7A5DC7] fixed w-[93vw] phone:w-[87vw]'>
+        <Header className='bg-[#7A5DC7] fixed w-[93vw] phone:w-[87vw] rounded-tl-[30px] rounded-tr-[30px] my-[5px]'>
             <div className='flex flex-row justify-between items-center'>
             <h2 className='main-font text-white text-[30px] phone:text-[20px]'>Dashboard</h2>
             <div className='flex flex-row justify-between gap-5 items-center'>
@@ -81,7 +81,7 @@ const DashBoard = () => {
             </div>
             </div>
             
-        </Header>
+        </Header>{/*
         <Content
           style={{
             margin: '24px 16px 0',
@@ -99,7 +99,7 @@ const DashBoard = () => {
             <p>long content</p>
             
           </div>
-        </Content>
+        </Content>*/}
         <Footer
           style={{
             textAlign: 'center',
