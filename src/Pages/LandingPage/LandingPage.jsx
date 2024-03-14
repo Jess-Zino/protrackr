@@ -5,6 +5,9 @@ import phone from '../../images/phone.webp'
 import mail from '../../images/mail.webp'
 import Navbar from '../../Components/Navbar'
 import { Link } from 'react-router-dom'
+import InitialLoadAnimation from '../../Animations/InitialLoadAnimation'
+import ScrollAnimation from '../../Animations/ScrollAnimation'
+import LoadAnimation from '../../Animations/LoadAnimation'
 const LandingPage = () => {
     const service =[
         {id:1, text:"Create Projects and Tasks Easily"},
@@ -22,10 +25,12 @@ const LandingPage = () => {
    
   return (
     <div className='landing overflow-x-hidden flex flex-col items-center gap-20'>
+    <InitialLoadAnimation>
         <header className='hero'>
             <Navbar/>
 
     <div className="w-[90vw]  flex flex-row items-center mx-auto justify-center tablet:flex-col-reverse phone:flex-col-reverse tablet:text-center phone:text-center ">
+      
         <div className=' flex-1  flex flex-col gap-5 '>
             <h1 className='main-font text-[56px] text-white tablet:text-[40px] phone:text-[25px] ' >Unleash Productivity:<br/> Our Ultimate Project Partner</h1>
             <p className='body-font text-white '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam illum, repellendus aperiam suscipit aliquid.</p>
@@ -33,24 +38,36 @@ const LandingPage = () => {
             <Button className='body-font bg-[#A982E7] text-white border-none custom-button'>Learn More</Button>
             <Button className='body-font text-[#7A5DC7] bg-white border-none custom-button-hover'><Link to="/signup">Sign Up Now</Link></Button>
             </div>
+
         </div>
+
         <div className='right flex-[1.8]'>
             <img src={hero} style={{width:"85%"}}/>
         </div>
     </div>
     </header>
+    </InitialLoadAnimation>
+   
     <div id="services" className='service w-[100vw]  flex flex-col items-center gap-9'>
+    <ScrollAnimation id="services" direction='top' threshold={0.5} >
         <div className='flex flex-col items-center gap-2'>
         <h1 className='main-font text-4xl text-[#7A5DC7] tablet:text-[40px] phone:text-[30px] tablet:text-center phone:text-center'>Streamline Your Project Management Process with ProTrackr</h1>
         <p className='body-font text-[#333] tablet:text-center phone:text-center'>Effortlessly Manage Projects, Collaborate with Your Team, and Stay Organized with Our Feature-Rich Project Management Platform.</p>
         </div>
-       
+        </ScrollAnimation>
+        <ScrollAnimation id="services" direction='left' threshold={0.5} >
+
         <div className='flex flex-row w-[90vw] gap-6 text-center tablet:flex-col phone:flex-col'>
         {service.map((item)=>(
                 <Card key={item.id} className='body-font w-[20vw] h-[35vh] odd:bg-[#7A5DC7] odd:text-white even:bg-white even:border-[#7A5DC7] even:text-[#7A5DC7] font-bold flex justify-center items-center tablet:mx-auto phone:mx-auto tablet:w-[60vw] phone:w-[80vw] tablet:h-[10vh] phone:h-[10vh] tablet:text-2xl phone:text-l '><p>{item.text}</p></Card>
             ))}
-        </div>
+            </div>
+          
+            </ScrollAnimation >
+
+        
     </div>
+
     <div id="pricing" className='pricing w-[100vw]  flex flex-col items-center gap-9'>
         <div className='flex flex-col items-center gap-2'>
         <h1 className='main-font text-4xl text-[#7A5DC7] tablet:text-[40px] phone:text-[30px] tablet:text-center phone:text-center'>Choose the Plan That Fits Your Needs</h1>
