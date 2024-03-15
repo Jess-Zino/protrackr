@@ -13,7 +13,10 @@ import {
 
 } from '@ant-design/icons';
 import { Layout, Menu, Badge,  Avatar} from 'antd';
-const {Header,   Content, Footer, Sider } = Layout;
+import DashboardHeader from '../Components/DashboardHeader';
+import BubblesCard from '../Components/Bubbles/BubblesCard';
+import HomePage from './Dashboard Content/HomePage';
+const {Content, Footer, Sider } = Layout;
 
   const icons = [
     { key: '1', icon: <HomeOutlined />, label: 'Dashboard' },
@@ -58,48 +61,23 @@ const DashBoard = () => {
             navigate(item.key)
         }} />   
       </Sider>
-      <Layout
+      <Layout 
         style={{
             paddingLeft:"10px",
-          marginLeft: '75px', // No need for margin on mobile
+          marginLeft: '90px', // No need for margin on mobile
           minHeight: '100vh',
+
         }}
       >
-        <Header className='bg-[#7A5DC7] fixed w-[93vw] phone:w-[87vw] rounded-tl-[30px] rounded-tr-[30px] my-[5px]'>
-            <div className='flex flex-row justify-between items-center'>
-            <h2 className='main-font text-white text-[30px] phone:text-[20px]'>Dashboard</h2>
-            <div className='flex flex-row justify-between gap-5 items-center'>
-            <SettingOutlined className='text-white text-[19px]'/>
-            <Badge  count={2} className='text-red-600' size='small'>
-
-            <BellOutlined className='text-white text-[19px] ' />
-            </Badge>
-            <Badge dot>
-    
-            <Avatar shape='square' size={{ xs: 30, sm: 12, md: 15, lg: 22, xl: 30, xxl: 40 }} style={{ backgroundColor: '#A982E7', color: 'white' }}>JA</Avatar>
-            </Badge>
-            </div>
-            </div>
-            
-        </Header>{/*
-        <Content
+       <DashboardHeader pagename="DashBoard"/>       
+         <Content className='flex flex-col gap-3'
           style={{
-            margin: '24px 16px 0',
-            overflow: 'initial',
+            margin: '10vh 14px 10vh 4px ',
+
           }}
         >
-          <div
-            style={{
-              padding: 24,
-              textAlign: 'center',
-              background: 'white',
-            
-            }}
-          >
-            <p>long content</p>
-            
-          </div>
-        </Content>*/}
+           <HomePage/>
+        </Content>
         <Footer
           style={{
             textAlign: 'center',
