@@ -12,9 +12,8 @@ import {
     LogoutOutlined,
 
 } from '@ant-design/icons';
-import { Layout, Menu, Badge,  Avatar} from 'antd';
+import { Layout, Menu} from 'antd';
 import DashboardHeader from '../Components/DashboardHeader';
-import BubblesCard from '../Components/Bubbles/BubblesCard';
 import HomePage from './Dashboard Content/HomePage';
 const {Content, Footer, Sider } = Layout;
 
