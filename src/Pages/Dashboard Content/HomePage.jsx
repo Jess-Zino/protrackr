@@ -5,10 +5,10 @@ import TaskCard from "../../Components/TaskCard"
 import TaskCalendar from "../../Components/TaskCalendar"
 const HomePage = () => {
     const projects= [
-        {id:1, value:24, task:"30day Challenge"},
+        {id:1, value:56, task:"30day Challenge"},
         {id:2, value:24, task:"FoodWorld"},
-        {id:3, value:24, task:"Baking Cookies"},
-        {id:4, value:24, task:"Canyon Valley"},
+        {id:3, value:79, task:"Baking Cookies"},
+        {id:4, value:12, task:"Canyon Valley"},
     ]
   return (
     <div className="flex flex-col gap-5">
@@ -41,9 +41,9 @@ const HomePage = () => {
         <h2 className="main-font text-[15px] text-[#7A5DC7]  flex flex-row items-center gap-2 ">Calendar <ArrowRightOutlined /></h2>
          <div className='flex flex-row gap-[3%]'>
             
-            <BubblesCard size={30} height={50} content={
-                <div className="flex flex-col items-center gap-4">
-                    <h2 className="body-font text-[20px]">Upcoming Tasks</h2>
+            <BubblesCard size={30} height={70} content={
+                <div className="flex flex-col items-center gap-4 p-[20px]">
+                    <h2 className="body-font text-[25px]">Upcoming Tasks</h2>
             <TaskCalendar/>
             </div>
             }/>

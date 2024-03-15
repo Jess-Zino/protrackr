@@ -1,13 +1,10 @@
-import { useState ,  useContext } from 'react';
+import { useState } from 'react';
 import './Navbar.css'
 import {Link} from 'react-router-dom'
 import {Button} from 'antd'
-//import { ThemeContext } from '../themes/ThemeContext';
-//import ThemeToggle from '../themes/ThemeToggle';
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  //const { isDarkMode } = useContext(ThemeContext);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -20,23 +17,19 @@ const Navbar = () => {
       
       <nav className={`navbar body-font ${isOpen ? 'active' : ''}`}>
         <ul>
-          <li><Link to="/dashboard">Dashboard</Link></li>
-          <li><a href="#services">Services</a>
-           
-            </li>
+        <li><Link to='/dashboard'>Dashboard</Link></li>
+          <li><a href="#services">Services</a></li>
           <li> <a href='#pricing'>Pricing</a></li>
           <li><a href='#contact'>Contact Us</a></li>
 
         </ul>
         <Link to="/login"><Button className="bg-[#7A5DC7] text-[#fff] body-font border-none custom-button-hover" >Login</Button></Link>
-        {/*<ThemeToggle />*/}
-        <div className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+      </nav>
+      <div className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
       </div>
-      </nav>
-     
     </div>
   );
 };

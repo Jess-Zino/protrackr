@@ -9,7 +9,7 @@ const DashboardHeader = ({pagename}) => {
 
   return (
     <div>
-       <Header className='bg-white fixed w-[95vw] phone:w-[100vw] my-[5px]'
+       <Header className='bg-white fixed w-[95vw] phone:w-[90vw] my-[5px]'
        style={{
         margin:"0 0 0 -20px",
         zIndex:"1000"

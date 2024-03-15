@@ -44,7 +44,13 @@ color:#A982E7 !important
 }
 .ant-select-selection-item{
   font-family: 'work sans' !important;
+
 }
 .ant-radio-button{
   font-family: 'work sans' !important;
+  border-color: #A982E7 !important;
+
+}
+.ant-radio-button-checked{
+  color: #A982E7 !important;
 }

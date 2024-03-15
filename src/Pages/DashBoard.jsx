@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 import {
     HomeOutlined,
     ProjectOutlined,
@@ -15,6 +16,13 @@ import {
 import { Layout, Menu} from 'antd';
 import DashboardHeader from '../Components/DashboardHeader';
 import HomePage from './Dashboard Content/HomePage';
+import Projects from './Dashboard Content/Projects';
+import TasksPage from './Dashboard Content/TasksPage';
+import Teams from './Dashboard Content/Teams';
+import Reports from './Dashboard Content/Reports';
+import Setting from './Dashboard Content/Setting';
+import Notifications from './Dashboard Content/Notifications';
+import CalendarPage from './Dashboard Content/CalendarPage';
 const {Content, Footer, Sider } = Layout;
 
   const icons = [
@@ -41,14 +49,17 @@ const {Content, Footer, Sider } = Layout;
 
 const DashBoard = () => {
     const navigate =  useNavigate()
-
+    const location = useLocation()
+    const currentPath = location.pathname;
+    console.log(currentPath)
   return (
     <Layout hasSider className='flex flex-col'>
       <Sider trigger={null}  collapsed={true}
-      className=' flex flex-col h-[100vh]  overflow-auto z-[1000] left-0 bottom-0 w-[20px]'
+      className=' flex flex-col h-[100vh]  overflow-auto z-[1001] left-0 bottom-0 w-[20px]'
         style={{
           position: 'fixed',
-          background:'#7A5DC7'
+          background:'#7A5DC7',
+         
         }}
       >
         <div className="demo-logo-vertical  " />
@@ -75,14 +86,14 @@ const DashBoard = () => {
 
           }}
         >
-           <HomePage/>
+          {currentPath == '/dashboard'? <HomePage/>:currentPath == '/projects'? <Projects/>:currentPath == '/tasks'? <TasksPage/>:currentPath == '/teams'? <Teams/>:currentPath == '/reports'? <Reports/>:currentPath == '/settings'? <Setting/>:currentPath == '/notifications'? <Notifications/>:currentPath == '/calendar'? <CalendarPage/>:currentPath == '/help'? <Notifications/>:console.log("no")}
         </Content>
         <Footer
           style={{
             textAlign: 'center',
           }}
         >
-          Ant Design ©{new Date().getFullYear()} Created by Ant UED
+          ProTrackr ©{new Date().getFullYear()} Created by Aki Jessica
         </Footer>
       </Layout>
     </Layout>
