@@ -11,7 +11,8 @@ const DashboardHeader = ({pagename}) => {
     <div>
        <Header className='bg-white fixed w-[95vw] phone:w-[100vw] my-[5px]'
        style={{
-        margin:"0 0 0 -20px"
+        margin:"0 0 0 -20px",
+        zIndex:"1000"
        }}>
             <div className='flex flex-row justify-between items-center'>
             <h2 className='main-font text-[#7A5DC7] text-[30px] phone:text-[20px]'>{pagename}</h2>

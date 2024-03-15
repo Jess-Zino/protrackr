@@ -3,9 +3,9 @@
 @tailwind utilities;
 @layer utilities {
     .main-font {
-      font-family: 'Lilita One';
+      font-family: 'Lilita One'!important;
     }
     .body-font {
-        font-family: 'work sans';
+        font-family: 'work sans'!important;
       }
   }

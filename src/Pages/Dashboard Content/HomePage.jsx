@@ -2,51 +2,63 @@ import BubblesCard from "../../Components/Bubbles/BubblesCard"
 import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 import {ArrowRightOutlined } from '@ant-design/icons'
 import TaskCard from "../../Components/TaskCard"
+import TaskCalendar from "../../Components/TaskCalendar"
 const HomePage = () => {
+    const projects= [
+        {id:1, value:24, task:"30day Challenge"},
+        {id:2, value:24, task:"FoodWorld"},
+        {id:3, value:24, task:"Baking Cookies"},
+        {id:4, value:24, task:"Canyon Valley"},
+    ]
   return (
     <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-3">
-        <h2 className="main-font text-[15px] text-[#7A5DC7]">Projects <ArrowRightOutlined /></h2>
-         <div className='flex flex-row gap-[3%]'>
-            
-            <BubblesCard size={20} content={
-            <div className="flex flex-col items-center gap-4">
-                <CircularProgress value={68} size='70px' thickness='10px' color="#A982E7">
-                    <CircularProgressLabel className='body-font'>68%</CircularProgressLabel>
-                    </CircularProgress>
-                  <h4 className="body-font">Baking Cookies</h4>  
-                    </div>}/>
-            <BubblesCard size={20} content={
-            <div className="flex flex-col items-center gap-4">
-                <CircularProgress value={20} size='70px' thickness='10px' color="#A982E7">
-                    <CircularProgressLabel className='body-font'>20%</CircularProgressLabel>
-                    </CircularProgress>
-                  <h4 className="body-font">FoodWorld</h4>  
-                    </div>}/>
-        <BubblesCard size={20} content={
-            <div className="flex flex-col items-center gap-4">
-                <CircularProgress value={90} size='70px' thickness='10px' color="#A982E7">
-                    <CircularProgressLabel className='body-font'>90%</CircularProgressLabel>
-                    </CircularProgress>
-                  <h4 className="body-font">Canyon Valley</h4>  
-                    </div>}/>
-            <BubblesCard size={20} content={
-            <div className="flex flex-col items-center gap-4">
-                <CircularProgress value={60} size='70px' thickness='10px' color="#A982E7">
-                    <CircularProgressLabel className='body-font'>60%</CircularProgressLabel>
-                    </CircularProgress>
-                  <h4 className="body-font">30day Challenge</h4>  
-                    </div>}/>
-            </div>
-            </div>
+        <h2 className="main-font text-[15px] text-[#7A5DC7] flex flex-row items-center gap-2">Projects <ArrowRightOutlined /></h2>
+         <div className='flex flex-row gap-[3%]  phone:flex-col phone:gap-8'>
+            {projects.map((item)=>(
+                 <BubblesCard key={item.id} size={20} height={20} content={
+                    <div className="flex flex-col items-center gap-4">
+                        <CircularProgress value={item.value} size='70px' thickness='10px' color="#A982E7">
+                            <CircularProgressLabel className='body-font'>{item.value}%</CircularProgressLabel>
+                            </CircularProgress>
+                          <h4 className="body-font">{item.task}</h4>  
+                            </div>}/>
+            ))}
+           
+           </div>
+           </div>
+    <div className="flex flex-row gap-4 phone:flex-col">
             <div className="flex flex-col gap-3">
-        <h2 className="main-font text-[15px] text-[#7A5DC7]">Tasks <ArrowRightOutlined /></h2>
+        <h2 className="main-font text-[15px] text-[#7A5DC7]  flex flex-row items-center gap-2 ">Tasks <ArrowRightOutlined /></h2>
          <div className='flex flex-row gap-[3%]'>
             
-            <BubblesCard size={30} height={40} content={
+            <BubblesCard size={30} height={50} content={
                 <TaskCard/>
             }/>
-                 </div>
+            </div>
+        </div>
+        <div className="flex flex-col gap-3">
+        <h2 className="main-font text-[15px] text-[#7A5DC7]  flex flex-row items-center gap-2 ">Calendar <ArrowRightOutlined /></h2>
+         <div className='flex flex-row gap-[3%]'>
+            
+            <BubblesCard size={30} height={50} content={
+                <div className="flex flex-col items-center gap-4">
+                    <h2 className="body-font text-[20px]">Upcoming Tasks</h2>
+            <TaskCalendar/>
+            </div>
+            }/>
+            </div>
+        </div>
+        <div className="flex flex-col gap-3">
+        <h2 className="main-font text-[15px] text-[#7A5DC7]  flex flex-row items-center gap-2 ">Tasks <ArrowRightOutlined /></h2>
+         <div className='flex flex-row gap-[3%]'>
+            
+            <BubblesCard size={30} height={50} content={
+                <TaskCard/>
+            }/>
+            </div>
+        </div>
+        
             </div>
     </div>
   )

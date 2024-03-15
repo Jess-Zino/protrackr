@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Avatar, List, Radio, Space } from 'antd';
+
+import { Avatar, List } from 'antd';
 const data = [
     {
       title: 'Ant Design Title 1',
@@ -16,20 +16,19 @@ const data = [
   ];
 
 const TaskCard = () => {
-   
+  
   return (
-    <div> 
-        
+    <div className='w-[90%]'> 
   <List
-  className='flex flex-col'
-  itemLayout='vertical'
-    pagination={{"position":"bottom",
-    "align":"center"
+
+    pagination={{
+      position:"bottom",
+      align:"center",
     }}
     dataSource={data}
     renderItem={(item, index) => (
-      <List.Item  className='flex flex-row'>
-        <List.Item.Meta className='flex flex-row'
+      <List.Item>
+        <List.Item.Meta
           avatar={<Avatar src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`} />}
           title={<a href="https://ant.design">{item.title}</a>}
           description="Ant Design, a design language for background applications, is refined by Ant UED Team"
