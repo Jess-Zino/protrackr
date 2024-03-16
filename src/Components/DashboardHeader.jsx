@@ -24,7 +24,7 @@ const DashboardHeader = ({pagename}) => {
             </Badge>
             <Badge dot>
     
-            <Avatar shape='square' size={{ xs: 30, sm: 12, md: 15, lg: 22, xl: 30, xxl: 40 }} style={{ backgroundColor: '#7A5DC7', color: 'white' }}>JA</Avatar>
+            <Avatar shape='square' size={{ xs: 30, sm: 30, md: 30, lg: 30, xl: 30, xxl: 40 }} style={{ backgroundColor: '#7A5DC7', color: 'white' }}>JA</Avatar>
             </Badge>
             </div>
             </div>
