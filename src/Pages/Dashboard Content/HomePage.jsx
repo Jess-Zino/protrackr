@@ -27,7 +27,7 @@ const HomePage = () => {
            
            </div>
            </div>
-    <div className="flex flex-row gap-4 phone:flex-col">
+    <div className="flex flex-row gap-4 phone:flex-col tablet:flex-col tablet:justify-center tablet:ml-[70px] tablet:gap-8 tablet:mt-6">
             <div className="flex flex-col gap-3">
         <h2 className="main-font text-[15px] text-[#7A5DC7]  flex flex-row items-center gap-2 ">Tasks <ArrowRightOutlined /></h2>
          <div className='flex flex-row gap-[3%]'>
@@ -42,8 +42,8 @@ const HomePage = () => {
          <div className='flex flex-row gap-[3%]'>
             
             <BubblesCard size={30} height={70} content={
-                <div className="flex flex-col items-center gap-4 p-[20px]">
-                    <h2 className="body-font text-[25px]">Upcoming Tasks</h2>
+                <div className="flex flex-col items-center gap-2 p-[20px]">
+                    <h2 className="body-font text-[16px]">Upcoming Tasks</h2>
             <TaskCalendar/>
             </div>
             }/>

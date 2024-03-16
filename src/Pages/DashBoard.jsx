@@ -23,6 +23,7 @@ import Reports from './Dashboard Content/Reports';
 import Setting from './Dashboard Content/Setting';
 import Notifications from './Dashboard Content/Notifications';
 import CalendarPage from './Dashboard Content/CalendarPage';
+import Help from './Dashboard Content/Help';
 const {Content, Footer, Sider } = Layout;
 
   const icons = [
@@ -86,7 +87,7 @@ const DashBoard = () => {
 
           }}
         >
-          {currentPath == '/dashboard'? <HomePage/>:currentPath == '/projects'? <Projects/>:currentPath == '/tasks'? <TasksPage/>:currentPath == '/teams'? <Teams/>:currentPath == '/reports'? <Reports/>:currentPath == '/settings'? <Setting/>:currentPath == '/notifications'? <Notifications/>:currentPath == '/calendar'? <CalendarPage/>:currentPath == '/help'? <Notifications/>:console.log("no")}
+          {currentPath == '/dashboard'? <HomePage/>:currentPath == '/projects'? <Projects/>:currentPath == '/tasks'? <TasksPage/>:currentPath == '/teams'? <Teams/>:currentPath == '/reports'? <Reports/>:currentPath == '/settings'? <Setting/>:currentPath == '/notifications'? <Notifications/>:currentPath == '/calendar'? <CalendarPage/>:currentPath == '/help'? <Help/>:navigate('/')}
         </Content>
         <Footer
           style={{

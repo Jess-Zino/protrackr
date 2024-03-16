@@ -24,6 +24,7 @@ const TaskCard = () => {
     pagination={{
       position:"bottom",
       align:"center",
+      pageSize:3
     }}
     dataSource={data}
     renderItem={(item, index) => (
