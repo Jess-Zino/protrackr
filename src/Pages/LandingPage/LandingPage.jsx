@@ -48,8 +48,8 @@ const LandingPage = () => {
     </header>
     </InitialLoadAnimation>
    
-    <div id="services" className='service w-[100vw]  flex flex-col items-center gap-9'>
-    <ScrollAnimation id="services" direction='top' threshold={0.5} >
+    <div id="services" className='service w-[100vw]  flex flex-col items-center gap-9 tablet:px-[30px]'>
+    <ScrollAnimation id="services" direction='top' threshold={0.4} >
         <div className='flex flex-col items-center gap-2'>
         <h1 className='main-font text-4xl text-[#7A5DC7] tablet:text-[40px] phone:text-[30px] tablet:text-center phone:text-center'>Streamline Your Project Management Process with ProTrackr</h1>
         <p className='body-font text-[#333] tablet:text-center phone:text-center'>Effortlessly Manage Projects, Collaborate with Your Team, and Stay Organized with Our Feature-Rich Project Management Platform.</p>
@@ -68,7 +68,7 @@ const LandingPage = () => {
         
     </div>
 
-    <div id="pricing" className='pricing w-[100vw]  flex flex-col items-center gap-9'>
+    <div id="pricing" className='pricing w-[100vw]  flex flex-col items-center gap-9 tablet:px-[30px]'>
         <div className='flex flex-col items-center gap-2'>
         <h1 className='main-font text-4xl text-[#7A5DC7] tablet:text-[40px] phone:text-[30px] tablet:text-center phone:text-center'>Choose the Plan That Fits Your Needs</h1>
         <p className='body-font text-[#333] tablet:text-center phone:text-center'>We Offer Flexible Pricing Plans to Accommodate Teams of All Sizes and Budgets. Get Started Today!</p>
@@ -88,14 +88,14 @@ const LandingPage = () => {
             
         </div>
     </div>
-    <div id="contact" className='contact flex flex-col gap-6'>
+    <div id="contact" className='contact flex flex-col gap-6 tablet:px-[30px]'>
     <div className='flex flex-col items-center gap-2'>
 
         <h1 className='main-font text-4xl text-[#7A5DC7] tablet:text-[40px] phone:text-[30px] tablet:text-center phone:text-center'>Have Questions or Need More Information?</h1>
         <p className='body-font text-[#333] tablet:text-center phone:text-center'>We&apos;re Here to Help! Reach Out to Us for Any Inquiries or to Learn More About Our Project Management Platform.</p>
         </div>
         <div className="w-[80vw]  flex flex-row items-center  text-[#333] tablet:flex-col-reverse phone:flex-col-reverse tablet:w-[100vw] phone:w-[100vw] " style={{ justifyContent:'center'}}>
-        <div className='left  flex-1  flex flex-col gap-20 body-font  items-center tablet:flex-row phone:flex-row tablet:mx-auto phone:mx-auto tablet:w-[100vw] phone:w-[90vw] tablet:justify-center phone:justify-center phone:gap-3 phone:text-center text-wrap'>
+        <div className='left  flex-1  flex flex-col gap-20 body-font  items-center tablet:flex-row phone:flex-row tablet:mx-auto phone:mx-auto tablet:w-[100vw] phone:w-[90vw] tablet:justify-center phone:justify-center tablet:gap-5 phone:gap-3 phone:text-center text-wrap'>
           <div className='flex flex-row items-center tablet:flex-col phone:flex-col '>
                 <img src={address} width={"40px"}/>
                 <p>123 Main Street,<br/> Anytown, USA <br/>Postal Code: 12345</p>
