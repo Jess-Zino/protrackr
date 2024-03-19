@@ -41,12 +41,12 @@ const items = [
   {
     key: '1',
     label: 'Overview',
-    children: <div className="grid grid-cols-3 gap-4">
+    children: <div className="grid grid-cols-3 gap-4 phone:flex phone:flex-col">
     {overviewData.map((item)=>(
                  <BubblesCard key={item.id} size={30} height={40} content={
                     <div className="flex flex-col items-center gap-4">
                         <AnimatedCircularProgress value={item.progress}/>
-                        <div>
+                        <div className="flex flex-col gap-3">
                           <h4 className="body-font text-[20px] text-center text-[#333] font-bold">{item.task}</h4>
                           <p className="body-font text-[15px] text-[#595959]">{item.description}</p>  
                           <p className="body-font text-[15px] text-[#a5a5a5]"><b className="text-[#595959]">Start Date: </b>{item.startDate}</p> 
@@ -81,7 +81,7 @@ const items = [
 const Projects = () => {
   return (
     <div>
-      <Tabs defaultActiveKey="1" items={items} centered className='body-font mt-4'/>;
+      <Tabs defaultActiveKey="1" items={items} centered className='body-font mt-4 phone:mt-2'/>;
     </div>
   )
 }
