@@ -1,6 +1,6 @@
 import {useNavigate} from 'react-router-dom'
 import {useLocation} from 'react-router-dom'
-import {
+import {UserOutlined,
     HomeOutlined,
     ProjectOutlined,
     SolutionOutlined,
@@ -24,6 +24,7 @@ import Setting from './Dashboard Content/Setting';
 import Notifications from './Dashboard Content/Notifications';
 import CalendarPage from './Dashboard Content/CalendarPage';
 import Help from './Dashboard Content/Help';
+import Profile from './Dashboard Content/Profile';
 const {Content, Footer, Sider } = Layout;
 
   const icons = [
@@ -36,7 +37,8 @@ const {Content, Footer, Sider } = Layout;
     { key: '7', icon: <BellOutlined />, label: 'Notifications' },
     { key: '8', icon: <SettingOutlined />, label: 'Settings' },
     { key: '9', icon: <QuestionCircleOutlined />, label: 'Help' },
-    { key: '10', icon: <LogoutOutlined />, label: 'Logout' },
+    { key: '10', icon: <UserOutlined />, label: 'Profile' },
+    { key: '11', icon: <LogoutOutlined />, label: 'Logout' },
   ];
   
   
@@ -52,7 +54,10 @@ const DashBoard = () => {
     const navigate =  useNavigate()
     const location = useLocation()
     const currentPath = location.pathname;
-    console.log(currentPath)
+    const dashName = (str)=>{
+      const newstr = str.slice(1, str.length)
+      return newstr[0].toUpperCase() + newstr.slice(1)
+    }
   return (
     <Layout hasSider className='flex flex-col'>
       <Sider trigger={null}  collapsed={true}
@@ -80,14 +85,14 @@ const DashBoard = () => {
 
         }}
       >
-       <DashboardHeader pagename="DashBoard"/>       
+       <DashboardHeader pagename={dashName(currentPath)}/>       
          <Content className='flex flex-col gap-3'
           style={{
             margin: '10vh 14px 10vh 4px ',
 
           }}
         >
-          {currentPath == '/dashboard'? <HomePage/>:currentPath == '/projects'? <Projects/>:currentPath == '/tasks'? <TasksPage/>:currentPath == '/teams'? <Teams/>:currentPath == '/reports'? <Reports/>:currentPath == '/settings'? <Setting/>:currentPath == '/notifications'? <Notifications/>:currentPath == '/calendar'? <CalendarPage/>:currentPath == '/help'? <Help/>:navigate('/')}
+          {currentPath == '/dashboard'? <HomePage/>:currentPath == '/projects'? <Projects/>:currentPath == '/tasks'? <TasksPage/>:currentPath == '/teams'? <Teams/>:currentPath == '/reports'? <Reports/>:currentPath == '/settings'? <Setting/>:currentPath == '/notifications'? <Notifications/>:currentPath == '/calendar'? <CalendarPage/>:currentPath == '/help'? <Help/>:currentPath == '/profile'? <Profile/>:navigate('/')}
         </Content>
         <Footer
           style={{

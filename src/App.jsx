@@ -21,6 +21,7 @@ function App() {
       <Route path="/notifications" element={<DashBoard/>}></Route>
       <Route path="/calendar" element={<DashBoard/>}></Route>
       <Route path="/help" element={<DashBoard/>}></Route>
+      <Route path="/profile" element={<DashBoard/>}></Route>
       <Route path="/logout" element={<Login/>}></Route>
     </Routes>
   )

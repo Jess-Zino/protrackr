@@ -7,7 +7,6 @@ import Navbar from '../../Components/Navbar'
 import { Link } from 'react-router-dom'
 import InitialLoadAnimation from '../../Animations/InitialLoadAnimation'
 import ScrollAnimation from '../../Animations/ScrollAnimation'
-import LoadAnimation from '../../Animations/LoadAnimation'
 const LandingPage = () => {
     const service =[
         {id:1, text:"Create Projects and Tasks Easily"},
