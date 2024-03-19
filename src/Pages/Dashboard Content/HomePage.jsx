@@ -1,8 +1,8 @@
 import BubblesCard from "../../Components/Bubbles/BubblesCard"
-import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
 import {ArrowRightOutlined } from '@ant-design/icons'
 import TaskCard from "../../Components/TaskCard"
 import TaskCalendar from "../../Components/TaskCalendar"
+import AnimatedCircularProgress from '../../Components/AnimatedCircularProgress'
 const HomePage = () => {
     const projects= [
         {id:1, value:56, task:"30day Challenge"},
@@ -18,9 +18,7 @@ const HomePage = () => {
             {projects.map((item)=>(
                  <BubblesCard key={item.id} size={20} height={20} content={
                     <div className="flex flex-col items-center gap-4">
-                        <CircularProgress value={item.value} size='70px' thickness='10px' color="#A982E7">
-                            <CircularProgressLabel className='body-font'>{item.value}%</CircularProgressLabel>
-                            </CircularProgress>
+                        <AnimatedCircularProgress value={item.value}/>
                           <h4 className="body-font">{item.task}</h4>  
                             </div>}/>
             ))}

@@ -54,3 +54,30 @@ color:#A982E7 !important
 .ant-radio-button-checked{
   color: #A982E7 !important;
 }
+
+.ant-tabs-tab-btn{
+  color: #7a5dc7!important;
+
+}
+.ant-tabs-nav-wrap{
+  background-color: white !important;
+
+}
+.ant-tabs-content{
+
+}
+.ant-tabs-ink-bar {
+  background-color: #A982E7 !important;
+
+}@keyframes progressAnimation {
+  from {
+    stroke-dashoffset: 157;
+  }
+  to {
+    stroke-dashoffset: calc(157 - (157 * var(--value)) / 100);
+  }
+}
+
+.circular-progress {
+  animation: progressAnimation .6s linear forwards;
+}
