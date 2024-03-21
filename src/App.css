@@ -63,8 +63,9 @@ color:#A982E7 !important
   background-color: white !important;
   border-radius:10px;
 }
-.ant-tabs-content{
 
+.ant-tooltip-open{
+  background-color: #A982E7;
 }
 .ant-tabs-ink-bar {
   background-color: #A982E7 !important;

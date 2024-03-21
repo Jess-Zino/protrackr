@@ -1,7 +1,43 @@
 import {Form, Input, Button} from 'antd'
 import {ArrowLeftOutlined} from '@ant-design/icons'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate} from 'react-router-dom'
+import axios from 'axios'
+import { useState } from 'react'
 const Login = () => {
+  const navigate = useNavigate()
+  const [email, setEmail] = useState(true)
+  const [password, setPassword] = useState(true)
+  const loginUser = ()=>{
+    const url = 'http://localhost:3000/login';
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      if (data.success) {
+        localStorage.setItem('user', email);
+        navigate('/dashboard');
+      } else {
+        alert(data.message);
+        setEmail('');
+        setPassword('');
+      }
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+  }    
   return (
     <div className="flex flex-row w-[100vw] h-[100vh] phone:flex-col tablet:flex-col ">
     <div className="flex flex-col items-start justify-center flex-[.7] bg-[#7A5DC7]  px-[60px]  phone:flex-[.6] tablet:flex-[.5] phone:x-auto tablet:x-auto  tablet:items-center phone:items-center gap-4 tablet:rounded-bl-[100px] phone:rounded-bl-[50px] tablet:rounded-br-[100px] phone:rounded-br-[50px]">
@@ -14,14 +50,14 @@ const Login = () => {
     <div className="flex-[1] flex flex-col items-center justify-center">
         <h1 className=" main-font text-4xl text-[#7A5DC7] tablet:text-[40px] phone:text-[30px] tablet:text-center phone:text-center">Login</h1>
         <Form className='body-font flex flex-col tablet:justify-center phone:justify-center tablet:items-center phone:items-center tablet:w-[80vw] phone:w-[80vw]  tablet:mx-auto phone:mx-auto'
-        layout='vertical'>
+        layout='vertical' onFinish={loginUser}>
             <Form.Item
             className=''
             label="Email"
             name="email"
             rules={[{ type: 'email', required: true, message: 'Please input a valid email!'}]}
             >
-                <Input className=' w-[25vw] body-font border-[#7A5DC7] border-2 tablet:w-[40vw] phone:w-[60vw]'></Input>
+                <Input className=' w-[25vw] body-font border-[#7A5DC7] border-2 tablet:w-[40vw] phone:w-[60vw]' onChange={(e)=>{setEmail(e.target.value)}}/>
             </Form.Item>
             <Form.Item
             className=''
@@ -30,7 +66,7 @@ const Login = () => {
             rules={[{  required: true, message: 'Please input a valid email!'}]}
             >
                 <div className='flex flex-col gap-1 phone:flex-col'>
-                <Input   type="password" className=' w-[25vw] body-font border-[#7A5DC7] border-2 tablet:w-[40vw] phone:w-[60vw]'></Input>
+                <Input   type="password" className=' w-[25vw] body-font border-[#7A5DC7] border-2 tablet:w-[40vw] phone:w-[60vw]'onChange={(e)=>{setPassword(e.target.value)}}/>
                 <Link className='text-right text-[#33333377] hover:text-[#7A5DC7]'>Forgot Password?</Link>
                 </div>
             </Form.Item>
