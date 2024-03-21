@@ -13,7 +13,7 @@ const SignUp = () => {
     const [phone, setPhone] = useState(true)
 
       const onFinish =()=>{
-        const url = 'http://localhost:3000/signup'
+        const url = 'https://protrackr-backend.onrender.com/signup'
         axios.post(url,{firstname, lastname, phone, email, password}).then(
             (res)=>{
                 if(res.data.success){

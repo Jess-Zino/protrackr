@@ -8,36 +8,27 @@ const Login = () => {
   const [email, setEmail] = useState(true)
   const [password, setPassword] = useState(true)
   const loginUser = ()=>{
-    const url = 'http://localhost:3000/login';
+    const url = 'https://protrackr-backend.onrender.com/login'
+    axios.post(url, {email, password}).then(
+      res=>{
+        console.log(res)
+        const data = res.data;
 
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ email, password })
+        if (data.success) {
+          localStorage.setItem('user', email);
+
+          navigate('/dashboard')
+        } else {
+         alert(data.message)
+         setEmail(' ')
+         setPassword(' ')
+        }
+    }).catch(err =>{
+  console.log(err)
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-      if (data.success) {
-        localStorage.setItem('user', email);
-        navigate('/dashboard');
-      } else {
-        alert(data.message);
-        setEmail('');
-        setPassword('');
-      }
-    })
-    .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
-    });
-  }    
+
+    
+  }
   return (
     <div className="flex flex-row w-[100vw] h-[100vh] phone:flex-col tablet:flex-col ">
     <div className="flex flex-col items-start justify-center flex-[.7] bg-[#7A5DC7]  px-[60px]  phone:flex-[.6] tablet:flex-[.5] phone:x-auto tablet:x-auto  tablet:items-center phone:items-center gap-4 tablet:rounded-bl-[100px] phone:rounded-bl-[50px] tablet:rounded-br-[100px] phone:rounded-br-[50px]">
